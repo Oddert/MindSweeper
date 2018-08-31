@@ -2,7 +2,8 @@ const express       = require('express'),
       app           = express(),
       bodyParser    = require('body-parser'),
       cookieParser  = require('cookie-parser'),
-      mongoose      = require('mongoose');
+      mongoose      = require('mongoose'),
+      path          = require('path');
 
 const Score         = require('./models/Score')
 
@@ -13,6 +14,8 @@ mongoose.connect(process.env.DATABASE)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
+
+app.use(express.static(path.join(__dirname + '/client/build')));
 
 app.use(require('express-session')({
   secret: process.env.SECRET,
@@ -99,6 +102,10 @@ app.post('/api/scores', (req, res) => {
     })
   }
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/production_build/build/index.html'));
+});
 
 const PORT = 5000 //process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server initialising on port: ${PORT}`))
