@@ -1,0 +1,22 @@
+.score {
+  font-size: 1.5em;
+  font-family: fantasy;
+  padding: 20px;
+  border: 2px solid #bec3c7;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.sizeButton {
+  border: 1px solid #2d3e50;
+  background-color: #fff;
+  font-size: 1.1em;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.sizeButton.active {
+  border: 1px solid tomato;
+}
