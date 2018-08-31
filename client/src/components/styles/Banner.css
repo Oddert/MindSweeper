@@ -1,0 +1,45 @@
+.banner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: calc(14*20px);
+  background-color: #EEEEEE;
+  padding: 10px;
+  box-shadow: inset 3px 3px 0px 0px #808080, inset -3px -3px 0px 0px #ffffff;
+}
+
+.numScreen {
+  /* flex: 1; */
+  border: 1px solid black;
+  /* width: 60px; */
+  font-family: 'Segment7Standard', arial;
+  font-size: 1.5em;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF0000;
+  background-color: #180000;
+}
+
+.banner-score {
+
+}
+
+.banner-cheese {
+  /* flex: 1; */
+  border: 1px solid black;
+  box-shadow: inset 3px 3px 0px 0px #EEEEEE, inset -3px -3px 0px 0px #808080;
+}
+
+.banner-cheese:active {
+  box-shadow: inset 3px 3px 0px 0px #808080, inset -3px -3px 0px 0px #EEEEEE;
+}
+
+.banner-cheese img {
+  max-height: 30px;
+}
+
+.banner-time {
+
+}

@@ -7,7 +7,11 @@ import {
   INIT_SCORES,
   ADD_SCORE,
   UPDATE_SCORE,
-  CHANGE_BOARD
+  CHANGE_BOARD,
+  TOGGLE_RESET,
+  UPDATE_TIME,
+  TIMER_TO_RESET,
+  TOGGLE_ABOUT
  } from './types'
 
 export const initCells = payload => ({
@@ -52,4 +56,21 @@ export const updateScore = payload => ({
 export const changeBoard = payload => ({
   type: CHANGE_BOARD,
   payload
+})
+
+export const toggleReset = () => ({
+  type: TOGGLE_RESET
+})
+
+export const updateTime = payload => ({
+  type: UPDATE_TIME,
+  payload
+})
+
+export const timerToReset = () => ({
+  type: TIMER_TO_RESET
+})
+
+export const toggleAbout = () => ({
+  type: TOGGLE_ABOUT
 })

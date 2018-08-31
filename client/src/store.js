@@ -9,14 +9,18 @@ const initialState = {
   cells: [[]],
   game: {
     status: 'playing',
-    score: 0
+    score: 0,
+    resetOpen: false,
+    time: 0,
+    timerRunning: false,
+    timerToReset: false,
+    aboutOpen: false
   },
   board: {
     difficulty: 1,
     sizes: [
       {x: 9, y: 9},
       {x: 16, y: 16},
-      {x: 20, y: 20},
       {x: 30, y: 16},
       {x: 30, y: 30}
     ]

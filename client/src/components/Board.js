@@ -5,6 +5,7 @@ import './styles/Board.css'
 
 import Cell from './Cell';
 import GameOver from './GameOver'
+import Banner from './Banner'
 
 
 class Board extends React.Component {
@@ -29,10 +30,11 @@ class Board extends React.Component {
   render() {
     return (
       <div className='board-container'>
-        {this.props.game.status === 'ended' ?
+        {this.props.game.status === 'ended' && this.props.game.resetOpen ?
           <GameOver score={this.props.game.score} /> :
           ''
         }
+        <Banner />
         <table>
           <tbody>
             {this.generateRows()}

@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { endGame, resetBoard, addScore, updateScore } from '../actions'
+import { endGame, resetBoard, addScore, updateScore, toggleReset } from '../actions'
+
+import './styles/GameOver.css'
 
 class GameOver extends React.Component {
   userReset() {
@@ -22,7 +24,7 @@ class GameOver extends React.Component {
       constrTable.push(row)
     }
     // populate table with bombs
-    var bombs = Math.floor((width * height) * 0.16);
+    var bombs = Math.floor((width * height) * 0.12);
     console.log('This many bombs: ', bombs)
     while (bombs > 0) {
       function addBomb() {
@@ -76,14 +78,24 @@ class GameOver extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Game Over!</p>
-        <p>You got exploded. No amount of mathematics could have prevented this.</p>
-        <p>F to pay respects.</p>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type='text' name='username' placeholder='Username for score board' ref={e => this.username = e} />
-          <button>Add Score and Reset</button>
-        </form>
+      <div className='gameOver-container'>
+        <div className='gameOver'>
+          <div className='gameOver-header'>
+            <div className='gameOver-flex'></div>
+            <h2 className='gameOver-flex title'>Game Over!</h2>
+            <div className='gameOver-flex'>
+              <button className='close' onClick={() => this.props.toggleReset()}>X</button>
+            </div>
+          </div>
+          <h4>Score: {this.props.score}</h4>
+          <h3>You got exploded. No amount of mathematics could have prevented this.</h3>
+          <h4 className='f'>F to pay respects.</h4>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <input type='text' name='username' placeholder='Username for score board' ref={e => this.username = e} />
+            <button className='submit'>Add Score and Reset</button>
+          </form>
+          <button className='submit reset' onClick={this.userReset.bind(this)}>Reset Board (dont add name)</button>
+        </div>
       </div>
     )
   }
@@ -98,7 +110,8 @@ const mapDispatchToProps = dispatch => ({
   endGame: () => dispatch(endGame()),
   resetBoard: payload => dispatch(resetBoard(payload)),
   addScore: payload => dispatch(addScore(payload)),
-  updateScore: payload => dispatch(updateScore(payload))
+  updateScore: payload => dispatch(updateScore(payload)),
+  toggleReset: () => dispatch(toggleReset())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameOver)

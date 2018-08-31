@@ -5,7 +5,7 @@ import gameReducer from './gameReducer'
 import scoresReducer from './scoresReducer'
 import boardReducer from './boardReducer'
 
-const placeholder = (state = {}, action) => state
+// const placeholder = (state = {}, action) => state
 
 const rootReducer = combineReducers({
   cells: cellsReducer,

@@ -3,13 +3,24 @@ import { connect } from 'react-redux'
 
 import { openCell, addPoint } from '../actions'
 
+import mine from '../mine.png'
+import flag from '../flag.png'
+
 class Cell extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showFlag: false
+    }
+    this.toggleFlag = this.toggleFlag.bind(this)
+  }
+
   handleClick() {
     const row = this.props.row
     const col = this.props.col
     console.log(`You clicked cell in row: ${row}, col: ${col}`)
     console.log(this.props.cells[row][col])
-    if (this.props.cells[row] && this.props.cells[row][col].status === 'closed' && this.props.game.status === 'playing') {
+    if (this.props.cells[row] && this.props.cells[row][col].status !== 'open' && this.props.game.status === 'playing') {
       const payload = [...this.props.cells]
       payload[row][col].status = 'open'
       this.props.openCell(payload)
@@ -22,28 +33,46 @@ class Cell extends React.Component {
     }
   }
 
+  toggleFlag (e) {
+    e.preventDefault();
+    const payload = [...this.props.cells]
+    const status = this.props.cells[this.props.row][this.props.col].status
+    if (!(status === 'open')) {
+      payload[this.props.row][this.props.col].status = status === 'flag' ? 'empty' : 'flag'
+      this.props.openCell(payload)
+    }
+  }
+
   render() {
     const row = this.props.row
     const col = this.props.col
-    var style = {}
+    var classIn = ''
+    var showIcon = false
+    var showFlag = false
 
     if (this.props.cells &&  this.props.cells[row] && this.props.cells[row][col]) {
       if (this.props.cells[row][col].status === 'open') {
         switch (this.props.cells[row][col].type) {
           case 'bomb':
-            style = {backgroundColor: 'steelblue'}
+            classIn = 'open bomb'
+            showIcon = true
             break
           case 'empty':
-            style = {backgroundColor: 'lightgray'}
+            classIn = 'open empty'
             break
           default:
             break
         }
+      } else if (this.props.cells[row][col].status === 'flag') {
+        showFlag = true;
       }
     }
 
     return (
-      <td onClick={this.handleClick.bind(this)} style={style}></td>
+      <td onClick={this.handleClick.bind(this)} className={classIn} onContextMenu={this.toggleFlag.bind(this)}>
+        {showIcon ? <img style={{height: '20px'}} className='cell_icon' src={mine} alt='mine icon' /> : ''}
+        {showFlag ? <img style={{height: '16px'}} className='cell_icon' src={flag} alt='flag icon' /> : ''}
+      </td>
     )
   }
 }

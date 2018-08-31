@@ -44,7 +44,7 @@ class Control extends React.Component {
       constrTable.push(row)
     }
 
-    var bombs = Math.floor((width * height) * 0.16);
+    var bombs = Math.floor((width * height) * 0.12);
     console.log('This many bombs: ', bombs)
     while (bombs > 0) {
       function addBomb() {
