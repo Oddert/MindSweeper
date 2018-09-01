@@ -1,5 +1,5 @@
 .board-container {
-  border: 1px dashed blue;
+  /* border: 1px dashed blue; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */

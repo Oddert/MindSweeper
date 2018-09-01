@@ -21,6 +21,14 @@
   transition: .2s linear;
 }
 
+.gameOver-spam-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .gameOver-header {
   display: flex;
   justify-content: center;

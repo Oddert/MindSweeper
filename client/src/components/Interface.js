@@ -6,6 +6,8 @@ import { toggleReset, initCells, endGame } from '../actions'
 
 import SizeButton from './SizeButton'
 import About from './About'
+import Background from './Background'
+import Reveal from './Reveal'
 
 import './styles/Interface.css'
 
@@ -68,11 +70,15 @@ class Interface extends React.Component {
         )}
         <br />
         <br />
-        <button className='toggleReset' onClick={this.handleResetFunction.bind(this)}>Reset</button>
-        <About />
         <div>
           Number of Bombs: {Math.floor((size.x * size.y) * 0.12)}
         </div>
+        <br />
+        <button className='toggleReset' onClick={this.handleResetFunction.bind(this)}>Reset</button>
+        <About />
+        <Reveal />
+        <Background />
+
       </div>
     )
   }

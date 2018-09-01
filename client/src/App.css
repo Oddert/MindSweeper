@@ -1,17 +1,33 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  max-height: 100%;
+    background-image: linear-gradient(135deg, #fc90a1, #d78cff, #838aff, #b7fff5, #a4ffa5, #feff98, #fdca6c);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App.back_1 {
+  background-image: url('https://i.ytimg.com/vi/3I7LjJ3-76s/maxresdefault.jpg');
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.App.back_2 {
+  background-image: url('https://wallpapertag.com/wallpaper/full/c/6/0/210227-amazing-vaporwave-wallpaper-1920x1080-1920x1080-hd-for-mobile.jpg');
+}
+
+.App.back_3 {
+  background-image: url('http://cdn1.channelpro.co.uk/sites/channelpro/files/2016/04/windows_10.png');
+}
+
+.App.back_4 {
+  background-image: none;
+  background-color: #fff
+}
+
+header h1 {
+  margin: 0;
   padding: 20px;
-  color: white;
 }
 
 .App-title {
@@ -22,17 +38,10 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
-
-html {
-  background-image: url('https://i.ytimg.com/vi/3I7LjJ3-76s/maxresdefault.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+html, body {
+  height: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -73,7 +82,9 @@ td .cell_icon {
 
 .gameFlex {
   display: flex;
-  border: 1px dashed green;
+  align-items: flex-start;
+  /* border: 1px dashed green; */
+  padding: 0px 0px 100px 0px;
 }
 
 .interface {

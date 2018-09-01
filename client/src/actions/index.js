@@ -11,7 +11,8 @@ import {
   TOGGLE_RESET,
   UPDATE_TIME,
   TIMER_TO_RESET,
-  TOGGLE_ABOUT
+  TOGGLE_ABOUT,
+  BACKGROUND
  } from './types'
 
 export const initCells = payload => ({
@@ -73,4 +74,9 @@ export const timerToReset = () => ({
 
 export const toggleAbout = () => ({
   type: TOGGLE_ABOUT
+})
+
+export const background = payload => ({
+  type: BACKGROUND,
+  payload
 })

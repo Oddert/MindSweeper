@@ -4,7 +4,8 @@ import {
   TOGGLE_RESET,
   UPDATE_TIME,
   TIMER_TO_RESET,
-  TOGGLE_ABOUT
+  TOGGLE_ABOUT,
+  BACKGROUND
 } from '../actions/types'
 
 const gameReducer = (state = {}, action) => {
@@ -25,6 +26,8 @@ const gameReducer = (state = {}, action) => {
       return Object.assign({}, state, { timerToReset: false })
     case TOGGLE_ABOUT:
       return Object.assign({}, state, { aboutOpen: !state.aboutOpen })
+    case BACKGROUND:
+      return Object.assign({}, state, { background: action.payload })
     default:
       return state
   }

@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
-app.use(express.static(path.join(__dirname + '/client/build')));
+app.use(express.static(path.join(__dirname + '/production_build')));
 
 app.use(require('express-session')({
   secret: process.env.SECRET,
@@ -27,16 +27,12 @@ app.use(require('express-session')({
   }
 }))
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Placeholder message'
-  })
-})
 
 app.get('/api', (req, res) => {
   console.log("/api route hit")
   res.json({
-    message: 'Hello from the API'
+    message: 'Hello from the API',
+    also: 'go away'
   })
 })
 
@@ -104,7 +100,7 @@ app.post('/api/scores', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/production_build/build/index.html'));
+  res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 
 const PORT = 5000 //process.env.PORT || 5000

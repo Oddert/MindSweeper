@@ -6,6 +6,19 @@ import { endGame, resetBoard, addScore, updateScore, toggleReset } from '../acti
 import './styles/GameOver.css'
 
 class GameOver extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cover: true
+    }
+  }
+
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({ cover: false })
+    }, 1000)
+  }
+
   userReset() {
     this.props.endGame()
     // make a new table for state
@@ -96,6 +109,7 @@ class GameOver extends React.Component {
           </form>
           <button className='submit reset' onClick={this.userReset.bind(this)}>Reset Board (dont add name)</button>
         </div>
+        {this.state.cover ? <div className='gameOver-spam-cover'></div> : ''}
       </div>
     )
   }

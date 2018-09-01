@@ -14,7 +14,8 @@ const initialState = {
     time: 0,
     timerRunning: false,
     timerToReset: false,
-    aboutOpen: false
+    aboutOpen: false,
+    background: 0
   },
   board: {
     difficulty: 1,
