@@ -15,7 +15,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      frameSrc: ["'twitch.tv'"]
+      frameSrc: ["'twitch.tv'"],
       styleSrc: ["'self'"]
     }
   },
