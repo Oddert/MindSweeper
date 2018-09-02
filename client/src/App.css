@@ -58,8 +58,25 @@ header h1 {
   font-family: 'fantasy', helvetica, arial;
 }
 
+header h3 {
+  margin: 5px 0px;
+}
+
 table {
   border-collapse: collapse;
+}
+
+.codeLinks {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.codeLinks a {
+  /* flex: 1; */
+  margin:  10px 20px 15px 20px;
 }
 
 

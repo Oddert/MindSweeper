@@ -16,6 +16,10 @@ class Main extends React.Component {
         <header>
           <h1>Welcome to MindSweeper!</h1>
           <h3>All the fun of Minesweeper but without any of the maths</h3>
+          <div className='codeLinks'>
+            <a href='https://glitch.com/edit/#!/oddert-mindsweeper?path=app.js:1:0'><i className='fa fa-edit'></i> Switch to edit mode</a>
+            <a href='https://github.com/Oddert/MindSweeper'><i className='fa fa-github'></i> View code on GitHub</a>
+          </div>
         </header>
         <div className='gameFlex'>
           <Interface />
