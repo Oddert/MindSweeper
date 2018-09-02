@@ -1,6 +1,7 @@
 import { INIT_CELLS, OPEN_CELL, RESET_BOARD } from '../actions/types'
+import initialState from '../InitialState'
 
-const cellReducer = (state = [], action) => {
+const cellReducer = (state = initialState.cells, action) => {
   switch(action.type) {
     case INIT_CELLS:
       return action.payload

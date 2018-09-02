@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { background } from '../actions'
 
@@ -33,6 +34,11 @@ class Background extends React.Component {
       </div>
     )
   }
+}
+
+Background.propTypes = {
+  background: PropTypes.func.isRequired,
+  game: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

@@ -6,8 +6,8 @@ import { toggleReset, initCells, endGame } from '../actions'
 
 import SizeButton from './SizeButton'
 import About from './About'
-import Background from './Background'
 import Reveal from './Reveal'
+import Background from './Background'
 
 import './styles/Interface.css'
 
@@ -99,7 +99,11 @@ class Interface extends React.Component {
 }
 
 Interface.propTypes = {
-  board: PropTypes.object.isRequired
+  board: PropTypes.object.isRequired,
+  game: PropTypes.object.isRequired,
+  toggleReset: PropTypes.func.isRequired,
+  initCells: PropTypes.func.isRequired,
+  endGame: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

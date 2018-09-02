@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { endGame, resetBoard, addScore, updateScore, toggleReset } from '../actions'
 
@@ -113,6 +114,18 @@ class GameOver extends React.Component {
       </div>
     )
   }
+}
+
+GameOver.propTypes = {
+  scores: PropTypes.array.isRequired,
+  score: PropTypes.number.isRequired,
+  board: PropTypes.object.isRequired,
+  
+  endGame: PropTypes.func.isRequired,
+  resetBoard: PropTypes.func.isRequired,
+  addScore: PropTypes.func.isRequired,
+  updateScore: PropTypes.func.isRequired,
+  toggleReset: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

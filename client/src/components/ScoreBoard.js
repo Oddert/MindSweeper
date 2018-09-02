@@ -63,7 +63,8 @@ class ScoreBoard extends React.Component {
 }
 
 ScoreBoard.propTypes = {
-  scores: PropTypes.array.isRequired
+  scores: PropTypes.array.isRequired,
+  initScores: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

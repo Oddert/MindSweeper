@@ -8,7 +8,9 @@ import {
   BACKGROUND
 } from '../actions/types'
 
-const gameReducer = (state = {}, action) => {
+import initialState from '../InitialState'
+
+const gameReducer = (state = initialState.game, action) => {
   switch (action.type) {
     case ADD_POINT:
       return action.payload ? Object.assign({}, state, {

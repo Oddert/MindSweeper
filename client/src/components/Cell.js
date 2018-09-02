@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { openCell, addPoint } from '../actions'
 
-import mine from '../mine.png'
-import flag from '../flag.png'
+import mine from '../img/mine.png'
+import flag from '../img/flag.png'
 
 class Cell extends React.Component {
   constructor(props) {
@@ -75,6 +76,15 @@ class Cell extends React.Component {
       </td>
     )
   }
+}
+
+Cell.propTypes = {
+  row: PropTypes.number.isRequired,
+  col: PropTypes.number.isRequired,
+  cells: PropTypes.array.isRequired,
+  game: PropTypes.object.isRequired,
+  openCell: PropTypes.func.isRequired,
+  addPoint: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

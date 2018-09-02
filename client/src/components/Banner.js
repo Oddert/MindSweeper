@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { updateTime, timerToReset } from '../actions'
 
 import './styles/Banner.css'
-import mindsweeper_smiley from '../mindsweeper_simley.png'
-import mindsweeper_sad from '../mindsweeper_sad.png'
+import mindsweeper_smiley from '../img/mindsweeper_simley.png'
+import mindsweeper_sad from '../img/mindsweeper_sad.png'
 
 class Banner extends React.Component {
   componentDidUpdate () {
@@ -50,6 +51,13 @@ class Banner extends React.Component {
       </div>
     )
   }
+}
+
+Banner.propTypes = {
+  board: PropTypes.object.isRequired,
+  game: PropTypes.object.isRequired,
+  timerToReset: PropTypes.func.isRequired,
+  updateTime: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

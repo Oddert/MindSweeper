@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Board from './Board';
 import Control from './Control'
@@ -26,6 +26,10 @@ class Main extends React.Component {
       </div>
     )
   }
+}
+
+Main.propTypes = {
+  game: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

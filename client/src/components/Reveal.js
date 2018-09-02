@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { openCell }  from '../actions'
 
@@ -26,6 +27,12 @@ class Reveal extends React.Component {
       <button className='revealButton' onClick={this.handleClick.bind(this)}>Reveal Board 🔎</button>
     )
   }
+}
+
+Reveal.propTypes = {
+  cells: PropTypes.array.isRequired,
+  game: PropTypes.object.isRequired,
+  openCell: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

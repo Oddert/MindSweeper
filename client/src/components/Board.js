@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import './styles/Board.css'
 
@@ -43,6 +44,11 @@ class Board extends React.Component {
       </div>
     )
   }
+}
+
+Board.propTypes = {
+  board: PropTypes.object.isRequired,
+  game: PropTypes.object.isRequired
 }
 
 const matchStateToProps = state => ({

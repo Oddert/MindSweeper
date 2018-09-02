@@ -1,13 +1,7 @@
 import { CHANGE_BOARD } from '../actions/types'
+import initialState from '../InitialState'
 
-const boardReducer = (state = {
-  difficulty: 1,
-  sizes: [
-    {x: 9, y: 9},
-    {x: 16, y: 16},
-    {x: 30, y: 16}
-  ]
-}, action) => {
+const boardReducer = (state = initialState.board, action) => {
   switch(action.type) {
     case CHANGE_BOARD:
       return Object.assign({}, state, { difficulty: action.payload })

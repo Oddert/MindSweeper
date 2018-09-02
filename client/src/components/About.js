@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { toggleAbout } from '../actions'
 
 import './styles/About.css'
-import game_screen_one from '../game_screen_one.PNG'
-import game_screen_two from '../game_screen_two.PNG'
-import game_screen_three from '../game_screen_three.gif'
-import mindsweeper_skull from '../mindsweeper_skull.png'
+import game_screen_one from '../img/game_screen_one.PNG'
+import game_screen_two from '../img/game_screen_two.PNG'
+import game_screen_three from '../img/game_screen_three.gif'
+import mindsweeper_skull from '../img/mindsweeper_skull.png'
 
 class About extends React.Component {
 
@@ -106,6 +107,11 @@ class About extends React.Component {
       </div>
     )
   }
+}
+
+About.propTypes = {
+  toggleAbout: PropTypes.func.isRequired,
+  game: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
