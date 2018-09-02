@@ -11,7 +11,7 @@ class Background extends React.Component {
     const data = [
       'gay',
       'Windows XP',
-      'Windows Vapor',
+      'Windows Vaporwave',
       'Windows 10',
       'White',
       'Black'

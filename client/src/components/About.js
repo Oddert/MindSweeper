@@ -99,8 +99,9 @@ class About extends React.Component {
               </p>
               <hr />
               <h3 className='subhead'>Image Credits</h3>
+              <br />
               <p>Windows Vaporwave: <a href='https://wallpapertag.com/vaporwave-wallpaper-1920x1080'>https://wallpapertag.com/vaporwave-wallpaper-1920x1080</a></p>
-              <p>'gay' uses a gradient scheme by <a href='https://twitter.com/deaths_cool'>Jen</a> of <a href='https://www.twitch.tv/shaunandjen'>ShaunAndJen. The skull imagery is also a part of this branding.</a></p>
+              <p>'gay' uses a gradient scheme by <a href='https://twitter.com/deaths_cool'>Jen</a> of <a href='https://www.twitch.tv/shaunandjen'>ShaunAndJen</a>. The skull imagery is also a part of this branding.</p>
               <p>Windows XP and Windows 10 are commons images.</p>
           </div>
         </div>
