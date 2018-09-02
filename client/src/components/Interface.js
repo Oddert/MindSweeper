@@ -63,21 +63,35 @@ class Interface extends React.Component {
 
     return (
       <div className='interface'>
-        <div className='score'>{this.props.game.score}</div>
-        <p>Board Size:</p>
-        {this.props.board.sizes.map((each, idx) =>
-          <SizeButton key={idx} index={idx} x={each.x} y={each.y} difficulty={this.props.board.difficulty} />
-        )}
-        <br />
-        <br />
-        <div>
-          Number of Bombs: {Math.floor((size.x * size.y) * 0.12)}
+
+        <div className='interface-flex'>
+          <div className='score'>{this.props.game.score}</div>
         </div>
+
+        <div className='interface-flex'>
+          <h3>Board Size:</h3>
+          {this.props.board.sizes.map((each, idx) =>
+            <SizeButton key={idx} index={idx} x={each.x} y={each.y} difficulty={this.props.board.difficulty} />
+          )}
+          <br />
+          <br />
+          <div>
+            Number of Bombs: {Math.floor((size.x * size.y) * 0.12)}
+          </div>
+        </div>
+
         <br />
-        <button className='toggleReset' onClick={this.handleResetFunction.bind(this)}>Reset</button>
-        <About />
-        <Reveal />
-        <Background />
+
+        <div className='interface-flex'>
+          <About />
+          <br />
+          <button className='toggleReset' onClick={this.handleResetFunction.bind(this)}>Reset</button>
+          <Reveal />
+        </div>
+
+        <div className='interface-flex'>
+          <Background />
+        </div>
 
       </div>
     )

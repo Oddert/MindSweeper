@@ -105,28 +105,3 @@
 .gameOver .submit.reset:active {
   background-color: rgb(230,127,34);
 }
-
-.gameOver .close {
-  /* margin-left: 95%; */
-  font-size: 1.3em;
-  border-radius: 50%;
-  padding: 10px 20px;
-  border: 1px solid #bec3c7;
-  padding: 5px 10px;
-  border-radius: 50%;
-  font-weight: 750;
-  transition: 0.2s linear;
-  cursor: pointer;
-  background-color: white;
-}
-
-.gameOver .close:hover {
-  background-color: #ecf0f1;
-  box-shadow: 5px 5px 20px rgba(0,0,0, 0.1);
-  transition: .15s linear;
-}
-
-.gameOver .close:active {
-  box-shadow: 2px 2px 10px rgba(0,0,0, 0.1);
-  background-color: #bec3c7;
-}

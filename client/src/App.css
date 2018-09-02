@@ -25,6 +25,15 @@
   background-color: #fff
 }
 
+.App.back_5 {
+  background-image: none;
+  background-color: #222;
+}
+
+.App.back_5 header, .App.back_3 header, .App.back_2 header {
+  color: #ecf0f1;
+}
+
 header h1 {
   margin: 0;
   padding: 20px;
@@ -98,4 +107,44 @@ td .cell_icon {
 
 .leaderBoard {
   flex: 1;
+}
+
+
+.close {
+  /* margin-left: 95%; */
+  font-size: 1.3em;
+  border-radius: 50%;
+  padding: 10px 20px;
+  border: 1px solid #bec3c7;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: 750;
+  transition: 0.2s linear;
+  cursor: pointer;
+  background-color: white;
+}
+
+.close:hover {
+  background-color: #ecf0f1;
+  box-shadow: 5px 5px 20px rgba(0,0,0, 0.1);
+  transition: .15s linear;
+}
+
+.close:active {
+  box-shadow: 2px 2px 10px rgba(0,0,0, 0.1);
+  background-color: #bec3c7;
+}
+
+@media only screen and (max-width: 764px) {
+  .gameFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    /* border: 1px dashed green; */
+    padding: 0px 0px 100px 0px;
+  }
+  .interface {
+    flex-direction: row;
+  }
 }

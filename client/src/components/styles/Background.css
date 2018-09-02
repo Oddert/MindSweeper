@@ -26,3 +26,16 @@
 .background-button.active:active {
   border-color: #c1392b;
 }
+
+.back_slider-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 764px) {
+  .back_slider-flex {
+    flex-direction: column;
+  }
+}

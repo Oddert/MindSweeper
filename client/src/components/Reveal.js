@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { openCell }  from '../actions'
 
+import './styles/Reveal.css'
+
 class Reveal extends React.Component {
   handleClick () {
     var payload = [...this.props.cells]
@@ -21,7 +23,7 @@ class Reveal extends React.Component {
       )
     }
     return (
-      <button className='toggleReset' onClick={this.handleClick.bind(this)}>Reveal Board</button>
+      <button className='revealButton' onClick={this.handleClick.bind(this)}>Reveal Board 🔎</button>
     )
   }
 }

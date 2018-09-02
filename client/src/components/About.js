@@ -12,7 +12,7 @@ import mindsweeper_skull from '../mindsweeper_skull.png'
 class About extends React.Component {
 
   handleClick (e) {
-    if (e.target.className === 'about-container' || e.target.className === 'about-container hidden') {
+    if (e.target.className === 'about-container' || e.target.className === 'about-container hidden' || e.target.className === 'close') {
       this.props.toggleAbout()
     }
   }
@@ -22,10 +22,17 @@ class About extends React.Component {
 
     return (
       <div>
-        <button className='toggleReset' onClick={() => this.props.toggleAbout()}>?</button>
+        <button className='toggleAbout' onClick={() => this.props.toggleAbout()}>?</button>
         <div className={classIn} onClick={this.handleClick.bind(this)}>
           <div className='about-box'>
-            <h1 className='center'>What is MindSweeper?</h1>
+            <div className='aboutTitleBox'>
+              <div className='aboutTitleBox-item'></div>
+              <h1 className='aboutTitleBox-item title center'>What is MindSweeper?</h1>
+              <div className='aboutTitleBox-item right'>
+                <button className='close'>X</button>
+              </div>
+            </div>
+
             <h2>Do you love the <em>idea</em> of Minesweeper?</h2>
             <h2 className='right'>…but do you also hate maths?</h2>
             <br />

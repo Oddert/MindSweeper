@@ -3,9 +3,26 @@ const express       = require('express'),
       bodyParser    = require('body-parser'),
       cookieParser  = require('cookie-parser'),
       mongoose      = require('mongoose'),
-      path          = require('path');
+      path          = require('path'),
+      helmet        = require('helmet');
 
 const Score         = require('./models/Score')
+
+app.use(helmet({
+  frameguard: {
+    action: 'deny'
+  },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'"]
+    }
+  },
+  hidePoweredBy: {
+    setTo: 'PHP 4.2.0'
+  },
+  dnsPrefetchControl: true
+}))
 
 require('dotenv').config()
 
@@ -104,4 +121,4 @@ app.get('*', (req, res) => {
 });
 
 const PORT = 5000 //process.env.PORT || 5000
-app.listen(PORT, () => console.log(`Server initialising on port: ${PORT}`))
+app.listen(PORT, () => console.log(`${new Date().toLocaleTimeString()}: Server initialising on port: ${PORT}`))

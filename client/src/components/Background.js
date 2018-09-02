@@ -12,21 +12,24 @@ class Background extends React.Component {
       'Windows XP',
       'Windows Vapor',
       'Windows 10',
-      'White'
+      'White',
+      'Black'
     ]
 
     return (
       <div className='back_slider'>
         <h3>Background:</h3>
-        {data.map((each, idx) =>
-          <button
-            key={each}
-            onClick={() => this.props.background(idx)}
-            className={this.props.game.background === idx ? 'background-button active' : 'background-button'}
-          >
-            {each}
-          </button>
-        )}
+        <div className='back_slider-flex'>
+          {data.map((each, idx) =>
+            <button
+              key={each}
+              onClick={() => this.props.background(idx)}
+              className={this.props.game.background === idx ? 'background-button active' : 'background-button'}
+            >
+              {each}
+            </button>
+          )}
+        </div>
       </div>
     )
   }

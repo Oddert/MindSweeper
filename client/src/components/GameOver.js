@@ -95,7 +95,7 @@ class GameOver extends React.Component {
         <div className='gameOver'>
           <div className='gameOver-header'>
             <div className='gameOver-flex'></div>
-            <h2 className='gameOver-flex title'>Game Over!</h2>
+            <h2 className='gameOver-flex title'>Game Over! ☠️</h2>
             <div className='gameOver-flex'>
               <button className='close' onClick={() => this.props.toggleReset()}>X</button>
             </div>
@@ -105,7 +105,7 @@ class GameOver extends React.Component {
           <h4 className='f'>F to pay respects.</h4>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <input type='text' name='username' placeholder='Username for score board' ref={e => this.username = e} />
-            <button className='submit'>Add Score and Reset</button>
+            <button className='submit'>Add Score and Reset <i className='fa fa-angle-right'></i></button>
           </form>
           <button className='submit reset' onClick={this.userReset.bind(this)}>Reset Board (dont add score)</button>
         </div>
