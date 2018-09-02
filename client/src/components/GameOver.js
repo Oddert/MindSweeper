@@ -107,7 +107,7 @@ class GameOver extends React.Component {
             <input type='text' name='username' placeholder='Username for score board' ref={e => this.username = e} />
             <button className='submit'>Add Score and Reset</button>
           </form>
-          <button className='submit reset' onClick={this.userReset.bind(this)}>Reset Board (dont add name)</button>
+          <button className='submit reset' onClick={this.userReset.bind(this)}>Reset Board (dont add score)</button>
         </div>
         {this.state.cover ? <div className='gameOver-spam-cover'></div> : ''}
       </div>

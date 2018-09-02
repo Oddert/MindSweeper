@@ -51,7 +51,12 @@ class ScoreBoard extends React.Component {
             ''
           }
         </ul>
-        <button onClick={this.toggle.bind(this)}>{this.state.open ? 'Show less' : 'Show all'}</button>
+        <button
+          className='expand'
+          onClick={this.toggle.bind(this)}
+        >
+          {this.state.open ? 'Show less' : 'Show all'} <i className={this.state.open ? 'fa fa-caret-up' : 'fa fa-caret-down'}></i>
+        </button>
       </div>
     )
   }

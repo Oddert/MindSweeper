@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { background } from '../actions'
 
+import './styles/Background.css'
+
 class Background extends React.Component {
   render() {
     const data = [
@@ -17,7 +19,11 @@ class Background extends React.Component {
       <div className='back_slider'>
         <h3>Background:</h3>
         {data.map((each, idx) =>
-          <button key={each} onClick={() => this.props.background(idx)}>
+          <button
+            key={each}
+            onClick={() => this.props.background(idx)}
+            className={this.props.game.background === idx ? 'background-button active' : 'background-button'}
+          >
             {each}
           </button>
         )}

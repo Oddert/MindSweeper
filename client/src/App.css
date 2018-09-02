@@ -82,6 +82,7 @@ td .cell_icon {
 
 .gameFlex {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   /* border: 1px dashed green; */
   padding: 0px 0px 100px 0px;

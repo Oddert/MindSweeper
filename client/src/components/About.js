@@ -22,7 +22,7 @@ class About extends React.Component {
 
     return (
       <div>
-        <button className='toggleReset' onClick={() => this.props.toggleAbout()}>About</button>
+        <button className='toggleReset' onClick={() => this.props.toggleAbout()}>?</button>
         <div className={classIn} onClick={this.handleClick.bind(this)}>
           <div className='about-box'>
             <h1 className='center'>What is MindSweeper?</h1>
@@ -38,13 +38,13 @@ class About extends React.Component {
             <h3 className='subhead'>The Betrayal</h3>
             <p>MindSweeper was first hypothesised about when Jen of Shaun Andjen was informed about the meaning of the numbers in minesweeper.</p>
             <div className='clip_container'>
-              <iframe src="https://clips.twitch.tv/embed?clip=BombasticDarlingPheasantCoolCat&autoplay=false" frameborder="0" allowfullscreen="true" height="378" width="620"></iframe>
+              <iframe src="https://clips.twitch.tv/embed?clip=BombasticDarlingPheasantCoolCat&autoplay=false" frameBorder="0" allowFullScreen="true" height="378" width="620" title="twitch1"></iframe>
             </div>
             <br />
             <h3 className='subhead'>A Revolutionary Idea</h3>
             <p>Later, it was decided that maths is bad and that having to think about minesweeper is bad and thus MindSweeper was born.</p>
             <div className='clip_container'>
-              <iframe src="https://clips.twitch.tv/embed?clip=ThirstyLivelyMochaWow&autoplay=false" frameborder="0" allowfullscreen="true" height="378" width="620" ></iframe>
+              <iframe src="https://clips.twitch.tv/embed?clip=ThirstyLivelyMochaWow&autoplay=false" frameBorder="0" allowFullScreen="true" height="378" width="620" title="twitch2"></iframe>
             </div>
             <h2 className='subhead'>Rules</h2>
             <div className='rules_grid'>
@@ -79,15 +79,15 @@ class About extends React.Component {
             </div>
             <hr />
             <p className='center'>
-              MindSweeper is a satirical game created for <a href='https://www.twitch.tv/shaunandjen' target='_blank'>
+              MindSweeper is a satirical game created for <a href='https://www.twitch.tv/shaunandjen' target='_blank' rel="noopener noreferrer">
                   Shaun and Jen
-                </a> by <a href='https://oddert.github.io/' target='_blank'>
+                </a> by <a href='https://oddert.github.io/' target='_blank' rel="noopener noreferrer">
                   Robyn V
                 </a> (
-                <a href='https://twitter.com/Oddert' target='_blank'>
-                  Oddert
+                <a href='https://twitter.com/Oddert' target='_blank' rel="noopener noreferrer">
+                  @ Oddert
                 </a>
-                ) who apologies.
+                ) who apologises.
               </p>
               <hr />
               <h3 className='subhead'>Image Credits</h3>
