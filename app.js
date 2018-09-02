@@ -12,12 +12,12 @@ app.use(helmet({
   frameguard: {
     action: 'deny'
   },
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'"]
-    }
-  },
+  // contentSecurityPolicy: {
+  //   directives: {
+  //     defaultSrc: ["'self'"],
+  //     styleSrc: ["'self'"]
+  //   }
+  // },
   hidePoweredBy: {
     setTo: 'PHP 4.2.0'
   },
