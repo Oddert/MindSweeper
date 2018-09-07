@@ -7,7 +7,7 @@ const initialState = {
     time: 0,
     timerRunning: false,
     timerToReset: false,
-    aboutOpen: false,
+    aboutOpen: true,
     background: 0
   },
   board: {
